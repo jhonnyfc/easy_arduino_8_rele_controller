@@ -1,0 +1,41 @@
+#include "rele.h"
+#include "tick.h"
+
+#define RELE_ONE_PIN 2
+#define RELE_ONE_CLOSE_MINUTES 100
+#define RELE_ONE_OPEN_MINUTES 300
+Rele releOne(RELE_ONE_PIN, RELE_ONE_CLOSE_MINUTES, RELE_ONE_OPEN_MINUTES);
+
+#define RELE_TWO_PIN 3
+#define RELE_TWO_CLOSE_MINUTES 120
+#define RELE_TWO_OPEN_MINUTES 180
+Rele releTwo(RELE_TWO_PIN, RELE_TWO_CLOSE_MINUTES, RELE_TWO_OPEN_MINUTES);
+
+#define RELE_THREE_PIN 4
+#define RELE_THREE_CLOSE_MINUTES 120
+#define RELE_THREE_OPEN_MINUTES 300
+Rele releThree(RELE_THREE_PIN, RELE_THREE_CLOSE_MINUTES, RELE_THREE_OPEN_MINUTES);
+
+#define RELE_FOUR_PIN 5
+#define RELE_FOUR_CLOSE_MINUTES 120
+#define RELE_FOUR_OPEN_MINUTES 120
+Rele releFour(RELE_FOUR_PIN, RELE_FOUR_CLOSE_MINUTES, RELE_FOUR_OPEN_MINUTES);
+
+void setup()
+{
+  pinMode(LED_BUILTIN, OUTPUT);
+
+  pinMode(RELE_ONE_PIN, OUTPUT);
+  pinMode(RELE_TWO_PIN, OUTPUT);
+  pinMode(RELE_THREE_PIN, OUTPUT);
+  pinMode(RELE_FOUR_PIN, OUTPUT);
+}
+
+void loop()
+{
+  releOne.checkStatus();
+  releTwo.checkStatus();
+  releThree.checkStatus();
+  releFour.checkStatus();
+  tick();
+}
