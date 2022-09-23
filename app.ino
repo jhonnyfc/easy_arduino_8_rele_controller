@@ -21,21 +21,28 @@ Rele releThree(RELE_THREE_PIN, RELE_THREE_CLOSE_MINUTES, RELE_THREE_OPEN_MINUTES
 #define RELE_FOUR_OPEN_MINUTES 170
 Rele releFour(RELE_FOUR_PIN, RELE_FOUR_CLOSE_MINUTES, RELE_FOUR_OPEN_MINUTES);
 
-void setup()
-{
+#define RELE_EIGHT_PIN 9
+#define RELE_EIGHT_CLOSE_MINUTES 120
+#define RELE_EIGHT_OPEN_MINUTES 200
+Rele releEight(RELE_EIGHT_PIN, RELE_EIGHT_CLOSE_MINUTES, RELE_EIGHT_OPEN_MINUTES);
+
+void setup() {
   pinMode(LED_BUILTIN, OUTPUT);
 
   pinMode(RELE_ONE_PIN, OUTPUT);
   pinMode(RELE_TWO_PIN, OUTPUT);
   pinMode(RELE_THREE_PIN, OUTPUT);
   pinMode(RELE_FOUR_PIN, OUTPUT);
+
+  pinMode(RELE_EIGHT_PIN, OUTPUT);
 }
 
-void loop()
-{
+void loop() {
   releOne.checkStatus();
   releTwo.checkStatus();
   releThree.checkStatus();
   releFour.checkStatus();
+
+  releEight.checkStatus();
   tick();
 }
