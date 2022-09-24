@@ -1,4 +1,3 @@
-
 #include "global.h"
 
 unsigned int seconds2Minutes(unsigned int seconds) {
@@ -20,7 +19,7 @@ class Rele {
     this->relePin = relePin;
     this->closeMinutes = closeMinutes;
     this->openMinutes = openMinutes;
-    closeRele();
+    openRele();
   }
 
   void checkStatus() {
